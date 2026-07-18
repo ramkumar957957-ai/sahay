@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2a5eff" />
+    <title>Sahay | Assistive Support</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-badge">🛡️</div>
+          <div>
+            <p class="eyebrow">Assistive support</p>
+            <h1>Sahay</h1>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="ghost-btn" id="installBtn" style="display:none;">Install</button>
+          <button class="ghost-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="hero-card">
+          <div class="status-pill" id="liveStatus">Live support ready</div>
+          <h2>Need help fast?</h2>
+          <p>One tap can notify your care circle and keep your routine on track.</p>
+          <button class="sos-btn" id="sosBtn">SOS</button>
+        </section>
+
+        <section class="quick-actions">
+          <button class="action-card active" data-target="contactsPanel">
+            <span class="icon">👨‍👩‍👧‍👦</span>
+            <span>Contacts</span>
+          </button>
+          <button class="action-card" data-target="remindersPanel">
+            <span class="icon">🗓️</span>
+            <span>Reminders</span>
+          </button>
+          <button class="action-card" data-target="carePanel">
+            <span class="icon">🧡</span>
+            <span>Care circle</span>
+          </button>
+          <button class="action-card" data-target="assistantPanel">
+            <span class="icon">🤖</span>
+            <span>AI help</span>
+          </button>
+        </section>
+
+        <section class="panel" id="contactsPanel">
+          <div class="panel-header">
+            <h3>Care contacts</h3>
+            <span class="small-pill" id="contactCount">0 active</span>
+          </div>
+          <ul id="contactList" class="list"></ul>
+          <form id="contactForm" class="inline-form">
+            <input id="contactName" type="text" placeholder="Name" required />
+            <input id="contactRole" type="text" placeholder="Relation" required />
+            <input id="contactPhone" type="tel" placeholder="Phone" required />
+            <button type="submit">Add</button>
+          </form>
+        </section>
+
+        <section class="panel" id="remindersPanel">
+          <div class="panel-header">
+            <h3>Today's routine</h3>
+            <span class="small-pill" id="reminderCount">0 items</span>
+          </div>
+          <ul id="reminderList" class="list"></ul>
+          <form id="reminderForm" class="inline-form">
+            <input id="reminderTitle" type="text" placeholder="Reminder" required />
+            <input id="reminderTime" type="text" placeholder="Time" required />
+            <input id="reminderNote" type="text" placeholder="Note" />
+            <button type="submit">Add</button>
+          </form>
+        </section>
+
+        <section class="panel" id="carePanel">
+          <h3>Care summary</h3>
+          <div class="stats" id="careSummary"></div>
+        </section>
+
+        <section class="panel" id="statusPanel" aria-live="polite">
+          <h3>System status</h3>
+          <p>All services are running normally.</p>
+        </section>
+
+        <section class="panel" id="assistantPanel">
+          <div class="panel-header">
+            <h3>Sahay AI</h3>
+            <span class="small-pill">Always available</span>
+          </div>
+          <div id="chatMessages" class="chat-messages">
+            <div class="msg bot">Hi! I can help with reminders, contacts, or emergency support.</div>
+          </div>
+          <form id="assistantForm" class="assistant-form">
+            <input id="assistantInput" type="text" placeholder="Ask Sahay..." />
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

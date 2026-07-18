@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Sahay",
+    "slug": "sahay-assistive-app",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "icon": "../icons/icon-512.svg",
+    "splash": {
+      "image": "../icons/icon-512.svg",
+      "resizeMode": "contain",
+      "backgroundColor": "#2a5eff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "../icons/icon-512.svg",
+        "backgroundColor": "#2a5eff"
+      }
+    }
+  }
+}
